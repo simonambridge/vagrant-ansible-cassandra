@@ -6,7 +6,7 @@ Easily provision 3 DSE Cassandra nodes with Opscenter across 4 VMs using Ansible
 
 * [Virtualbox](https://www.virtualbox.org/)
 * [Vagrant](https://www.vagrantup.com/downloads)
-* [Ansible](http://docs.ansible.com/intro_installation.html)
+* [Ansible] 2.x (http://docs.ansible.com/intro_installation.html)
 
 ##Provisioning
 
@@ -20,13 +20,18 @@ DSE and Opscenter will be automatically configured and started once installed. T
 
 Nodes will be running on: ```192.168.56.11```, ```192.168.56.12```, ```192.168.56.13```
 
-Opscenter will be running on: ```192.168.56.14:8888```
+Opscenter will be running on: ```opscenter:8888``` or ```192.168.56.14:8888```
 
-Install the datastax-agents by entering ```vagrant``` for both the username and password.
+The user account on each node is ```vagrant``` for both the username and password.
 
-SSH into a node with: ```vagrant ssh <nodename>```
+Install the datastax-agents using the ```vagrant``` ID.
 
-CQLSH example ```cqlsh 192.168.56.11```
+SSH into a node with: ```vagrant ssh <nodename>``` where nodenane is node1, node2 or node3
+
+
+CQLSH example ```cqlsh node1``` or ```cqlsh 192.168.56.11```
+
+*Vagrant Commands*
 
 Shutdown the VMs: ```vagrant halt```
 
